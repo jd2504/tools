@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed 's/measure: *\([a-zA-Z0-9_]*\) *{/measure: fw_\1 {/g' fw_operative_changes.sql |
+    sed 's/dimension: *\([a-zA-Z0-9_]*\) *{/dimension: fw_\1 {/g' |
+    sed 's/dimension_group: *\([a-zA-Z0-9_]*\) *{/dimension_group: fw_\1 {/g' > fw-op-changes.sql

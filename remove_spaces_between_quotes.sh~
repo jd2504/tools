@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]
+then
+    echo "Usage: field file"
+    exit
+fi
+
+field=$1
+file=$2
+
+awk -F"'" '
+    BEGIN {
+    	  OFS="\'"
+    }
+    {
+	for (i = 2; i < NF; i += 2) {
+	    gsub(/[ \t]+/, "_", $i)
+    	}
+    
+	print $0
+    }
+' file > $file_tmp

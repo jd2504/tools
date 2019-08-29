@@ -1,3 +1,3 @@
-# scripts
+# tools
 
-Repository for every day scripts.
+Everyday tools and utilities
